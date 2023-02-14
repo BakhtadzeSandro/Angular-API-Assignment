@@ -1,0 +1,22 @@
+.container{
+    margin-left: 34%;
+    margin-top: 5%;
+}
+.container input{
+    width: 300px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 15px;
+    padding-left: 10px;
+}
+.container button{
+    width: 100px;
+    height: 30px;
+    margin-left: 2%;
+    font-size: 15px;
+    background-color: rgb(12, 114, 114);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}

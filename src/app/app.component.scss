@@ -1,0 +1,23 @@
+header{
+    h2{
+        text-align: center;
+    }
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+header{
+    .list{
+        width: 100px;
+        height: 70px;
+        background-color: rgb(112, 202, 112);
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+    }
+}

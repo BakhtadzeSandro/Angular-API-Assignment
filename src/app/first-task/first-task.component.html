@@ -1,0 +1,11 @@
+<div class="container">
+  <input type="text" [(ngModel)]="movieName">
+  <button (click)="getMovie(movieName)">Submit</button>
+  <div class="movie-info" *ngIf="movieInfo">
+    <h3>{{ movieInfo.Title }} was released {{ currentYear - movieInfo.Year }} years ago.</h3>
+    <label>The actors and actresses are:</label>
+    <ul>
+      <li *ngFor="let actor of actors">{{ actor }}</li>
+    </ul>
+  </div>
+</div>
