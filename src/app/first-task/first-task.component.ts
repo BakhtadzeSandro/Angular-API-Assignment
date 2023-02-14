@@ -1,61 +1,65 @@
 import { Component, OnInit } from '@angular/core';
-import { count, forkJoin, of, switchMap } from 'rxjs';
+import {
+  count,
+  forkJoin,
+  map,
+  mergeMap,
+  Observable,
+  of,
+  switchMap,
+  tap,
+} from 'rxjs';
 import { ApiService } from 'src/services/api.service';
+import { Country, FinalAPI } from '../interfaces/api.model';
 
 @Component({
   selector: 'app-first-task',
   templateUrl: './first-task.component.html',
-  styleUrls: ['./first-task.component.css']
+  styleUrls: ['./first-task.component.css'],
 })
 export class FirstTaskComponent implements OnInit {
+  constructor(private apiService: ApiService) {}
 
-  constructor(private apiService: ApiService) { }
-
-  movieName: string = "";
-  movieInfo: any;
-  actors: string[] = [];
-  countries: string[] = [];
+  movieName: string = '';
 
   currentYear = new Date().getFullYear();
 
+  result$: Observable<any> | undefined;
+
   getMovie(movieName: string) {
-    this.apiService.getMovie(movieName).pipe(switchMap(val => {
-      const actors = val.Actors.split(',').map((actor: string) => {
-        const nameParts = actor.trim().split(' ');
-        if (nameParts.length === 1) {
-          return nameParts[0];
-        } else {
-          return nameParts[0];
-        }
-      });
-      const year = val.Year;
-      const countries = val.Country.split(",").map((country: string) => {
-        return country.trim();
-      });
-      return forkJoin(countries.map((country: string) => {
-        return this.apiService.getCountry(country)
-      })) as any;
-    })).subscribe(x => {
-      // this.movieInfo = x;
-      // this.actors = this.movieInfo.Actors.split(',').map((actor: string) => {
-      //   const nameParts = actor.trim().split(' ');
-      //   if (nameParts.length === 1) {
-      //     return nameParts[0];
-      //   } else {
-      //     return nameParts[0];
-      //   }
-      // });
-      // this.countries = this.movieInfo.Country.split(",").map((country: string) => {
-      //   return country.trim();
-      // });
-      // this.countries.map(country => {
-      //   this.apiService.getCountry(country).subscribe(x => console.log(x));
-      // })
-      console.log(x);
-    });
+    this.result$ = this.apiService.getMovie(movieName).pipe(
+      switchMap((movieInfo) => {
+        const actors = movieInfo.Actors.split(',').map(
+          (actor: string) => actor.trim().split(' ')[0]
+        );
+        const movieTitle = movieInfo.Title;
+        const year = movieInfo.Year;
+        const countries = movieInfo.Country.split(',').map((country: string) =>
+          country.trim()
+        );
+        return forkJoin(
+          countries.map((country: string) => {
+            return this.apiService.getCountry(country);
+          })
+        ).pipe(
+          map((countries: any) => {
+            // console.log(countries);
+            return {
+              actorNames: actors,
+              movieTitle,
+              year,
+              countries: countries.map((c: Country) => ({
+                flag: c.flags.png,
+                currency: c.currencies,
+              })),
+            };
+          })
+        );
+      })
+    )
+    // console.log(this.result$);
   }
 
-  ngOnInit() {
-  }
 
+  ngOnInit() {}
 }

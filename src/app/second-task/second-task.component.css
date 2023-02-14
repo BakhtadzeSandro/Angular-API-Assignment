@@ -1,0 +1,25 @@
+.task2-container {
+    margin-left: 7%;
+    margin-top: 5%;
+}
+
+.task2-container input {
+    width: 300px;
+    height: 30px;
+    border-radius: 8px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.task2-container button {
+    width: 100px;
+    height: 30px;
+    margin-left: 2%;
+    font-size: 15px;
+    background-color: rgb(12, 114, 114);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}

@@ -1,3 +1,10 @@
-<p>
-  second-task works!
-</p>
+<div class="task2-container">
+  <input type="text" [(ngModel)]="movie1">
+  <input type="text" [(ngModel)]="movie2">
+  <input type="text" [(ngModel)]="movie3">
+  <button (click)="getMovies()">Submit</button>
+  <div class="result" *ngIf="result$ | async as result">
+    <p>Total length of all the movies combined: {{ result }} minutes</p>
+    <p>Total population of all the countries combined: </p>
+  </div>
+</div>
