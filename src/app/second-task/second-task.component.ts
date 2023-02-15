@@ -16,7 +16,7 @@ export class SecondTaskComponent implements OnInit {
 
   result$: Observable<any> | undefined;
 
-    getMovies() {
+  getMovies() {
     const movies = [this.movie1, this.movie2, this.movie3];
 
     this.result$ = from(movies).pipe(
@@ -25,6 +25,9 @@ export class SecondTaskComponent implements OnInit {
           map((movieInfo: any) => {
             const lengthString: string = movieInfo.Runtime.replace(" min", "");
             const length = Number(lengthString);
+            const countries = movieInfo.Country.split(',').map((country: string) =>
+              country.trim()
+            );
             return length;
           })
         );
@@ -32,6 +35,7 @@ export class SecondTaskComponent implements OnInit {
       reduce((acc, curr) => acc + curr, 0)
     );
   }
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {

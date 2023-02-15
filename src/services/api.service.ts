@@ -18,4 +18,12 @@ export class ApiService {
       .get(environment.countryApiBase + countryName + '?fullText=true')
       .pipe(map((e: any) => e[0]));
   }
+
+  getMoviesList(){
+    return this.http.get(environment.jsonServerBase + "/movieList");
+  }
+
+  saveMovie(movieInfo: any){
+    return this.http.post(environment.jsonServerBase + "/movieList", movieInfo)
+  }
 }

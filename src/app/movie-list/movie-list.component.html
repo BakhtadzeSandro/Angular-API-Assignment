@@ -1,0 +1,10 @@
+<div class="movie-list-container">
+  <ul>
+    <li *ngFor="let movie of moviesList$ | async">
+      <div>The ID is: {{ movie.id }}</div>
+      <div>The name is: {{ movie.movieTitle }}</div>
+      <div>Release date: {{ movie.year }}</div>
+        <button>See details</button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,27 @@
+.form{
+    margin-left: 27%;
+    margin-top: 10%;
+}
+.form .submit-button{
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    font-size: 15px;
+    background-color: rgb(12, 114, 114);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+.form .comment textarea{
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+.form .rate .ratings{
+    display: flex;
+    gap: 15px;
+}
+.form .rate .ratings p{
+    cursor: pointer;
+}

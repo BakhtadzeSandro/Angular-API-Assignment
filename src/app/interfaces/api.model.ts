@@ -2,11 +2,13 @@ export interface Country {
     flags: {
         png: string,
     }
-    currencies: {
-        currencyName: {
-            name: string,
-            symbol: string
-        }
+    currencies: Currency
+}
+
+export interface Currency{
+    currencyName:{
+        name: string,
+        symbol: string
     }
 }
 

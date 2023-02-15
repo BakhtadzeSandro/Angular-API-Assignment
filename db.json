@@ -1,0 +1,30 @@
+{
+  "movieList": [
+    {
+      "actorNames": [
+        "Guy",
+        "Carrie-Anne",
+        "Joe"
+      ],
+      "movieTitle": "Memento",
+      "year": "2000",
+      "countries": [
+        {
+          "flag": "https://flagcdn.com/w320/us.png",
+          "currency": {
+            "USD": {
+              "name": "United States dollar",
+              "symbol": "$"
+            }
+          }
+        }
+      ],
+      "id": 1
+    },
+    {
+      "comment": "This is one of the best movies ever filmed",
+      "rating": "5",
+      "id": 2
+    }
+  ]
+}

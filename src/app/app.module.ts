@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { FirstTaskComponent } from './first-task/first-task.component';
 import { SecondTaskComponent } from './second-task/second-task.component';
 import { ObjectKeyPipe } from 'src/pipes/objectKey.pipe';
+import { FormComponent } from './form/form.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 @NgModule({
-  declarations: [				
+  declarations: [						
     AppComponent,
       FirstTaskComponent,
       SecondTaskComponent,
-      ObjectKeyPipe
+      ObjectKeyPipe,
+      FormComponent,
+      MovieListComponent
    ],
   imports: [
     BrowserModule,

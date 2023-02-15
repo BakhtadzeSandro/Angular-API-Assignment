@@ -32,8 +32,8 @@ export class FirstTaskComponent implements OnInit {
         const actors = movieInfo.Actors.split(',').map(
           (actor: string) => actor.trim().split(' ')[0]
         );
-        const movieTitle = movieInfo.Title;
-        const year = movieInfo.Year;
+        const movieTitle: string = movieInfo.Title;
+        const year: number = movieInfo.Year;
         const countries = movieInfo.Country.split(',').map((country: string) =>
           country.trim()
         );
@@ -60,6 +60,9 @@ export class FirstTaskComponent implements OnInit {
     // console.log(this.result$);
   }
 
+  addToList(result$: any){
+    this.apiService.saveMovie(result$).subscribe(x => console.log(x));
+  }
 
   ngOnInit() {}
 }
