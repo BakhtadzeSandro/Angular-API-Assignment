@@ -6,6 +6,8 @@
         "Carrie-Anne",
         "Joe"
       ],
+      "poster": "https://m.media-amazon.com/images/M/MV5BZTcyNjk1MjgtOWI3Mi00YzQwLWI5MTktMzY4ZmI2NDAyNzYzXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "director": "Christopher Nolan",
       "movieTitle": "Memento",
       "year": "2000",
       "countries": [
@@ -19,12 +21,231 @@
           }
         }
       ],
+      "comment": "This is the BEST MOVIE!",
+      "rating": "5",
       "id": 1
     },
     {
-      "comment": "This is one of the best movies ever filmed",
+      "actorNames": [
+        "Matthew",
+        "Anne",
+        "Jessica"
+      ],
+      "poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "director": "Christopher Nolan",
+      "movieTitle": "Interstellar",
+      "year": "2014",
+      "countries": [
+        {
+          "flag": "https://flagcdn.com/w320/us.png",
+          "currency": {
+            "USD": {
+              "name": "United States dollar",
+              "symbol": "$"
+            }
+          }
+        },
+        {
+          "flag": "https://flagcdn.com/w320/gb.png",
+          "currency": {
+            "GBP": {
+              "name": "British pound",
+              "symbol": "£"
+            }
+          }
+        },
+        {
+          "flag": "https://flagcdn.com/w320/ca.png",
+          "currency": {
+            "CAD": {
+              "name": "Canadian dollar",
+              "symbol": "$"
+            }
+          }
+        }
+      ],
+      "comment": "Awesome!",
       "rating": "5",
       "id": 2
+    },
+    {
+      "actorNames": [
+        "Christian",
+        "Hugh",
+        "Scarlett"
+      ],
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjA4NDI0MTIxNF5BMl5BanBnXkFtZTYwNTM0MzY2._V1_SX300.jpg",
+      "director": "Christopher Nolan",
+      "movieTitle": "The Prestige",
+      "year": "2006",
+      "countries": [
+        {
+          "flag": "https://flagcdn.com/w320/gb.png",
+          "currency": {
+            "GBP": {
+              "name": "British pound",
+              "symbol": "£"
+            }
+          }
+        },
+        {
+          "flag": "https://flagcdn.com/w320/us.png",
+          "currency": {
+            "USD": {
+              "name": "United States dollar",
+              "symbol": "$"
+            }
+          }
+        }
+      ],
+      "comment": "YIKES!",
+      "rating": "5",
+      "id": 3
+    },
+    {
+      "actorNames": [
+        "Leonardo",
+        "Joseph",
+        "Elliot"
+      ],
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+      "director": "Christopher Nolan",
+      "movieTitle": "Inception",
+      "year": "2010",
+      "countries": [
+        {
+          "flag": "https://flagcdn.com/w320/us.png",
+          "currency": {
+            "USD": {
+              "name": "United States dollar",
+              "symbol": "$"
+            }
+          }
+        },
+        {
+          "flag": "https://flagcdn.com/w320/gb.png",
+          "currency": {
+            "GBP": {
+              "name": "British pound",
+              "symbol": "£"
+            }
+          }
+        }
+      ],
+      "comment": "YASS!",
+      "rating": "5",
+      "id": 4
+    },
+    {
+      "actorNames": [
+        "Christian",
+        "Heath",
+        "Aaron"
+      ],
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+      "director": "Christopher Nolan",
+      "movieTitle": "The Dark Knight",
+      "year": "2008",
+      "countries": [
+        {
+          "flag": "https://flagcdn.com/w320/us.png",
+          "currency": {
+            "USD": {
+              "name": "United States dollar",
+              "symbol": "$"
+            }
+          }
+        },
+        {
+          "flag": "https://flagcdn.com/w320/gb.png",
+          "currency": {
+            "GBP": {
+              "name": "British pound",
+              "symbol": "£"
+            }
+          }
+        }
+      ],
+      "comment": "I like soundtrack of this movie!",
+      "rating": "5",
+      "id": 5
+    },
+    {
+      "actorNames": [
+        "Leonardo",
+        "Emily",
+        "Mark"
+      ],
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzhiNDkyNzktNTZmYS00ZTBkLTk2MDAtM2U0YjU1MzgxZjgzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "director": "Martin Scorsese",
+      "movieTitle": "Shutter Island",
+      "year": "2010",
+      "countries": [
+        {
+          "flag": "https://flagcdn.com/w320/us.png",
+          "currency": {
+            "USD": {
+              "name": "United States dollar",
+              "symbol": "$"
+            }
+          }
+        }
+      ],
+      "comment": "My first movie of plot-twist",
+      "rating": "5",
+      "id": 6
+    },
+    {
+      "actorNames": [
+        "Kevin",
+        "Kate",
+        "Laura"
+      ],
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTAxMzU0NTgxNzZeQTJeQWpwZ15BbWU2MDQzNDkxNw@@._V1_SX300.jpg",
+      "director": "Alan Parker",
+      "movieTitle": "The Life of David Gale",
+      "year": "2003",
+      "countries": [
+        {
+          "flag": "https://flagcdn.com/w320/gb.png",
+          "currency": {
+            "GBP": {
+              "name": "British pound",
+              "symbol": "£"
+            }
+          }
+        },
+        {
+          "flag": "https://flagcdn.com/w320/de.png",
+          "currency": {
+            "EUR": {
+              "name": "Euro",
+              "symbol": "€"
+            }
+          }
+        },
+        {
+          "flag": "https://flagcdn.com/w320/es.png",
+          "currency": {
+            "EUR": {
+              "name": "Euro",
+              "symbol": "€"
+            }
+          }
+        },
+        {
+          "flag": "https://flagcdn.com/w320/us.png",
+          "currency": {
+            "USD": {
+              "name": "United States dollar",
+              "symbol": "$"
+            }
+          }
+        }
+      ],
+      "comment": "Beautiful!",
+      "rating": "5",
+      "id": 7
     }
   ]
 }

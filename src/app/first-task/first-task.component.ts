@@ -10,6 +10,7 @@ import {
   tap,
 } from 'rxjs';
 import { ApiService } from 'src/services/api.service';
+import { SharedService } from 'src/services/shared.service';
 import { Country, FinalAPI } from '../interfaces/api.model';
 
 @Component({
@@ -18,7 +19,10 @@ import { Country, FinalAPI } from '../interfaces/api.model';
   styleUrls: ['./first-task.component.css'],
 })
 export class FirstTaskComponent implements OnInit {
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private sharedService: SharedService
+  ) {}
 
   movieName: string = '';
 
@@ -34,6 +38,8 @@ export class FirstTaskComponent implements OnInit {
         );
         const movieTitle: string = movieInfo.Title;
         const year: number = movieInfo.Year;
+        const poster: string = movieInfo.Poster;
+        const director: string = movieInfo.Director;
         const countries = movieInfo.Country.split(',').map((country: string) =>
           country.trim()
         );
@@ -46,6 +52,8 @@ export class FirstTaskComponent implements OnInit {
             // console.log(countries);
             return {
               actorNames: actors,
+              poster,
+              director,
               movieTitle,
               year,
               countries: countries.map((c: Country) => ({
@@ -56,12 +64,12 @@ export class FirstTaskComponent implements OnInit {
           })
         );
       })
-    )
+    );
     // console.log(this.result$);
   }
 
-  addToList(result$: any){
-    this.apiService.saveMovie(result$).subscribe(x => console.log(x));
+  addToList(result$: any) {
+    this.sharedService.movieData = result$;
   }
 
   ngOnInit() {}

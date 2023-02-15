@@ -2,7 +2,10 @@
   <input type="text" [(ngModel)]="movieName" />
   <button (click)="getMovie(movieName)" class="submit-button">Submit</button>
   <div class="movie-info" *ngIf="result$ | async as result">
-    <h2>{{ result.movieTitle }} was released {{ currentYear - result.year }} years ago.</h2>
+    <h2>
+      {{ result.movieTitle }} was released {{ currentYear - result.year }} years
+      ago.
+    </h2>
     <label>The actors and actresses are:</label>
     <ul>
       <li *ngFor="let actor of result.actorNames">{{ actor }}</li>
@@ -11,7 +14,9 @@
       <img [src]="item.flag" alt="" />
       <h4>{{ item.currency | objectKey }}</h4>
     </div>
-    <button class="fav-button" routerLink="/form" (click)="addToList(result)">Add movie to favorites</button>
+    <button class="fav-button" routerLink="/form" (click)="addToList(result)">
+      Add movie to favorites
+    </button>
   </div>
 </div>
 <router-outlet></router-outlet>

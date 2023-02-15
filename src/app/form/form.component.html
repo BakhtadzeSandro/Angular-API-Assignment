@@ -1,23 +1,59 @@
 <div class="form">
   <div class="comment">
     <h3>Share your thoughts about this movie</h3>
-    <textarea cols="60" rows="5" [(ngModel)]="movieComment"></textarea><br>
+    <textarea cols="60" rows="5" [(ngModel)]="movieComment"></textarea><br />
   </div>
   <div class="rate">
     <h3>Rate the movie</h3>
     <div class="ratings">
-      <input type="radio" id="1" name="rating" value="1" [(ngModel)]="selectedRating">
+      <input
+        type="radio"
+        id="1"
+        name="rating"
+        value="1"
+        [(ngModel)]="selectedRating"
+      />
       <label for="1">1 ⭐</label>
-      <input type="radio" id="2" name="rating" value="2" [(ngModel)]="selectedRating">
+      <input
+        type="radio"
+        id="2"
+        name="rating"
+        value="2"
+        [(ngModel)]="selectedRating"
+      />
       <label for="2">2 ⭐</label>
-      <input type="radio" id="3" name="rating" value="3" [(ngModel)]="selectedRating">
+      <input
+        type="radio"
+        id="3"
+        name="rating"
+        value="3"
+        [(ngModel)]="selectedRating"
+      />
       <label for="3">3 ⭐</label>
-      <input type="radio" id="4" name="rating" value="4" [(ngModel)]="selectedRating">
+      <input
+        type="radio"
+        id="4"
+        name="rating"
+        value="4"
+        [(ngModel)]="selectedRating"
+      />
       <label for="4">4 ⭐</label>
-      <input type="radio" id="5" name="rating" value="5" [(ngModel)]="selectedRating">
+      <input
+        type="radio"
+        id="5"
+        name="rating"
+        value="5"
+        [(ngModel)]="selectedRating"
+      />
       <label for="5">5 ⭐</label>
     </div>
   </div>
-  <button class="submit-button" routerLink="/movie-list" (click)="submitAdditionalData()">Submit</button>
+  <button
+    class="submit-button"
+    routerLink="/movie-list"
+    (click)="submitAdditionalData()"
+  >
+    Submit
+  </button>
 </div>
 <router-outlet></router-outlet>

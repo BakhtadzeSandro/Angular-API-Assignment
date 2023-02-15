@@ -1,10 +1,15 @@
 <div class="movie-list-container">
-  <ul>
-    <li *ngFor="let movie of moviesList$ | async">
-      <div>The ID is: {{ movie.id }}</div>
-      <div>The name is: {{ movie.movieTitle }}</div>
-      <div>Release date: {{ movie.year }}</div>
-        <button>See details</button>
-    </li>
-  </ul>
+  <div class="movie-information" *ngFor="let movie of moviesList$ | async">
+    <div class="headings">
+      <h3>Name: {{ movie.movieTitle }}</h3>
+      <p>Release date: {{ movie.year }}</p>
+      <p>Director: {{ movie.director }}</p>
+      <button class="details-button" [routerLink]="movie.id">
+        See details
+      </button>
+    </div>
+    <div class="movie-poster">
+      <img [src]="movie.poster" />
+    </div>
+  </div>
 </div>
