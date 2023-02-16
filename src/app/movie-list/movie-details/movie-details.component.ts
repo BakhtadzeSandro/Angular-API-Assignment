@@ -25,13 +25,13 @@ export class MovieDetailsComponent implements OnInit {
 
   currentYear = new Date().getFullYear();
 
-  deleteComment(id: string) {
+  deleteMovie(id: string) {
     if (
       confirm('Press OK if you want to delete this movie from the favorites') ==
       true
     ) {
       this.apiService
-        .deleteComment(id)
+        .deleteMovie(id)
         .subscribe((x) => this.router.navigateByUrl('/movie-list'));
     }
   }

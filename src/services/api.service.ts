@@ -34,7 +34,7 @@ export class ApiService {
     );
   }
 
-  deleteComment(id: string) {
+  deleteMovie(id: string) {
     return this.http.delete(environment.jsonServerBase + '/movieList/' + id);
   }
 }
