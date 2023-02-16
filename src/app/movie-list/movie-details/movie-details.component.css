@@ -4,6 +4,9 @@
   background-color: rgb(173, 173, 190);
   border-radius: 8px;
 }
+ul li {
+  list-style-type: none;
+}
 .movie-info {
   padding: 30px;
 }
@@ -43,20 +46,12 @@
   height: 40px;
 }
 .buttons .edit-button {
-  margin-left: 25px;
   border: none;
   border-radius: 8px;
   background-color: rgb(87, 87, 194);
   color: white;
   cursor: pointer;
   text-align: center;
-}
-.delete-button {
-  border: none;
-  border-radius: 8px;
-  background-color: rgb(194, 91, 87);
-  color: white;
-  cursor: pointer;
 }
 .delete-movie-button {
   width: 200px;

@@ -69,6 +69,7 @@ export class FirstTaskComponent implements OnInit {
   }
 
   addToList(result$: any) {
+    console.log(result$, 'ddd');
     this.sharedService.movieData = result$;
   }
 

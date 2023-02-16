@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { find, map } from 'rxjs';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { catchError, EMPTY, find, map, Observable, tap } from 'rxjs';
 import { ApiService } from 'src/services/api.service';
 
 @Component({
@@ -9,9 +9,19 @@ import { ApiService } from 'src/services/api.service';
   styleUrls: ['./movie-details.component.css'],
 })
 export class MovieDetailsComponent implements OnInit {
-  moviesList$: any | null = this.apiService.getMoviesList();
+  moviesList$: Observable<any> | null = this.apiService.getMoviesList().pipe(
+    map((movies: any) => Object.values(movies)),
+    map((moviesArray: any[]) => {
+      const movieId = this.activatedRoute.snapshot.params['movie-id'];
+      return moviesArray.find((a: any) => a.id == movieId);
+    }),
+    catchError(() => {
+      this.isData = false;
+      return EMPTY;
+    })
+  );
 
-  selectedMovie: any;
+  isData = true;
 
   currentYear = new Date().getFullYear();
 
@@ -22,36 +32,15 @@ export class MovieDetailsComponent implements OnInit {
     ) {
       this.apiService
         .deleteComment(id)
-        .subscribe((x) => console.log('Comment was deleted'));
-      this.selectedMovie = false;
+        .subscribe((x) => this.router.navigateByUrl('/movie-list'));
     }
   }
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private router: Router
   ) {}
 
-  ngOnInit() {
-    const movieId = this.activatedRoute.snapshot.params['movie-id'];
-    // if (movieId) {
-    //   this.selectedMovie = this.moviesList$
-    //     .pipe(find((movie: any) => movie.id === movieId))
-    //     .subscribe((x: any) => console.log(x));
-    // }
-    // console.log(this.selectedMovie);
-    if (movieId) {
-      this.moviesList$
-        .pipe(
-          map((movies: any) => Object.values(movies)),
-          map((moviesArray: any[]) =>
-            moviesArray.find((a: any) => a.id == movieId)
-          )
-        )
-        .subscribe((selectedMovie: any) => {
-          this.selectedMovie = selectedMovie;
-          console.log(this.selectedMovie);
-        });
-    }
-  }
+  ngOnInit() {}
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/services/api.service';
 import { SharedService } from 'src/services/shared.service';
 
@@ -19,12 +20,15 @@ export class FormComponent implements OnInit {
     const movieData = this.sharedService.movieData;
     movieData.comment = additionalData.comment;
     movieData.rating = additionalData.rating;
-    this.apiService.saveMovie(movieData).subscribe((x) => console.log(x));
+    this.apiService
+      .saveMovie(movieData)
+      .subscribe((x) => this.router.navigateByUrl('/movie-list'));
   }
 
   constructor(
     private apiService: ApiService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private router: Router
   ) {}
 
   ngOnInit() {}

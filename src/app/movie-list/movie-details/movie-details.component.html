@@ -1,4 +1,4 @@
-<ng-container *ngIf="selectedMovie; else noMovie">
+<ng-container *ngIf="moviesList$ | async as selectedMovie">
   <div class="selected-movie-container">
     <div class="movie-info">
       <div class="headings">
@@ -7,7 +7,7 @@
             class="delete-movie-button"
             (click)="deleteComment(selectedMovie.id)"
           >
-            Delete movie from favorites
+            Delete movie from favorites ✖
           </button>
           <h1>{{ selectedMovie.movieTitle }}</h1>
           <h3>
@@ -39,7 +39,6 @@
           <h3>This is what you wrote about this movie:</h3>
           <h4>{{ selectedMovie.comment }}</h4>
           <div class="buttons">
-            <button class="delete-button">Delete ✖</button>
             <button class="edit-button">Edit ✎</button>
           </div>
         </div>
@@ -47,7 +46,6 @@
           <h3>You can see your given rating below!</h3>
           <h4>{{ selectedMovie.rating }} ⭐</h4>
           <div class="buttons">
-            <button class="delete-button">Delete ✖</button>
             <button class="edit-button">Edit ✎</button>
           </div>
         </div>
@@ -55,6 +53,6 @@
     </div>
   </div>
 </ng-container>
-<ng-template #noMovie>
+<div *ngIf="!isData">
   <div class="error">No Movie Found</div>
-</ng-template>
+</div>
