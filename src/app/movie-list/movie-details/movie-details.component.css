@@ -1,0 +1,69 @@
+.selected-movie-container {
+  width: 95%;
+  margin: 2.5%;
+  background-color: rgb(173, 173, 190);
+  border-radius: 8px;
+}
+.movie-info {
+  padding: 30px;
+}
+.country {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+.country img {
+  width: 150px;
+  height: 100px;
+}
+.headings {
+  display: flex;
+  margin-top: 5%;
+  justify-content: space-evenly;
+}
+.selected-movie-container .movie-poster img {
+  height: 550px;
+  border-radius: 8px;
+}
+.comment-rating {
+  margin-left: 30%;
+}
+.comment-rating .comment h4 {
+  width: 50%;
+  color: rgb(117, 82, 82);
+}
+.error {
+  text-align: center;
+  color: red;
+  margin-top: 10%;
+  font-size: 30px;
+}
+.buttons button {
+  width: 100px;
+  height: 40px;
+}
+.buttons .edit-button {
+  margin-left: 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(87, 87, 194);
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+.delete-button {
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(194, 91, 87);
+  color: white;
+  cursor: pointer;
+}
+.delete-movie-button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(194, 91, 87);
+  color: white;
+  cursor: pointer;
+}

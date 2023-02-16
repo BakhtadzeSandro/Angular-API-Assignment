@@ -11,23 +11,20 @@ import { SecondTaskComponent } from './second-task/second-task.component';
 import { ObjectKeyPipe } from 'src/pipes/objectKey.pipe';
 import { FormComponent } from './form/form.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieDetailsComponent } from './movie-list/movie-details/movie-details.component';
 
 @NgModule({
-  declarations: [						
+  declarations: [
     AppComponent,
-      FirstTaskComponent,
-      SecondTaskComponent,
-      ObjectKeyPipe,
-      FormComponent,
-      MovieListComponent
-   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
+    FirstTaskComponent,
+    SecondTaskComponent,
+    ObjectKeyPipe,
+    FormComponent,
+    MovieListComponent,
+    MovieDetailsComponent,
   ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

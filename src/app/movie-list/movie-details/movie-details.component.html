@@ -1,7 +1,60 @@
-<div class="selected-movie-container">
-  <div class="headings">
-    <div class="movie-title">
-      <h1>TEST</h1>
+<ng-container *ngIf="selectedMovie; else noMovie">
+  <div class="selected-movie-container">
+    <div class="movie-info">
+      <div class="headings">
+        <div class="movie-title">
+          <button
+            class="delete-movie-button"
+            (click)="deleteComment(selectedMovie.id)"
+          >
+            Delete movie from favorites
+          </button>
+          <h1>{{ selectedMovie.movieTitle }}</h1>
+          <h3>
+            This movie was released {{ currentYear - selectedMovie.year }} years
+            ago.
+          </h3>
+          <label>The main actors are:</label>
+          <ul>
+            <li *ngFor="let actor of selectedMovie.actorNames">{{ actor }}</li>
+          </ul>
+          <label
+            >The movie was made in the following country(or countries):</label
+          >
+          <div class="country" *ngFor="let country of selectedMovie.countries">
+            <div class="flag">
+              <img [src]="country.flag" />
+            </div>
+            <div class="country-currency">
+              <h3>{{ country.currency | objectKey }}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="movie-poster">
+          <img [src]="selectedMovie.poster" />
+        </div>
+      </div>
+      <div class="comment-rating">
+        <div class="comment">
+          <h3>This is what you wrote about this movie:</h3>
+          <h4>{{ selectedMovie.comment }}</h4>
+          <div class="buttons">
+            <button class="delete-button">Delete ✖</button>
+            <button class="edit-button">Edit ✎</button>
+          </div>
+        </div>
+        <div class="rating">
+          <h3>You can see your given rating below!</h3>
+          <h4>{{ selectedMovie.rating }} ⭐</h4>
+          <div class="buttons">
+            <button class="delete-button">Delete ✖</button>
+            <button class="edit-button">Edit ✎</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</ng-container>
+<ng-template #noMovie>
+  <div class="error">No Movie Found</div>
+</ng-template>

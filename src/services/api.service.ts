@@ -19,11 +19,22 @@ export class ApiService {
       .pipe(map((e: any) => e[0]));
   }
 
-  getMoviesList(){
-    return this.http.get(environment.jsonServerBase + "/movieList");
+  getMoviesList() {
+    return this.http.get(environment.jsonServerBase + '/movieList');
   }
 
-  saveMovie(movieInfo: any){
-    return this.http.post(environment.jsonServerBase + "/movieList", movieInfo)
+  saveMovie(movieInfo: any) {
+    return this.http.post(environment.jsonServerBase + '/movieList', movieInfo);
+  }
+
+  editComment(id: string, movieInfo: any) {
+    return this.http.patch(
+      environment.jsonServerBase + '/movieList/' + id,
+      movieInfo
+    );
+  }
+
+  deleteComment(id: string) {
+    return this.http.delete(environment.jsonServerBase + '/movieList/' + id);
   }
 }
